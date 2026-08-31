@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" defer src="script.js"></script>
+
+    <title>Frontend Mentor | Weather app</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 0.6875rem;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="nav-bar">
+      <div class="nav-bar__left-side">
+        <img src="./assets/images/logo.svg" alt="" />
+      </div>
+      <div class="nav-bar__right-side">
+        <button class="units-btn">
+          <img
+            class="units-icon"
+            src="./assets/images/icon-units.svg"
+            alt="units-icon"
+          />
+          <p>Units</p>
+          <img
+            class="dropdown-icon"
+            src="./assets/images/icon-dropdown.svg"
+            alt="dropdown"
+          />
+        </button>
+      </div>
+    </nav>
+    <div class="units-state">
+      <button class="switch-button">Switch to Imperial</button>
+      <label for="temp-option">Temperature</label>
+      <div class="unit-section">
+        <button class="state-button state-button--active celsius">
+          Celsius (°C) <img src="./assets/images/icon-checkmark.svg" alt="" />
+        </button>
+        <button class="state-button fahrenheit">
+          Fahrenheit (°F)
+          <img src="./assets/images/icon-checkmark.svg" alt="" />
+        </button>
+      </div>
+      <label for="wind-speed-option">Wind Speed</label>
+      <div class="unit-section">
+        <button class="state-button state-button--active kmh">
+          km/h <img src="./assets/images/icon-checkmark.svg" alt="" />
+        </button>
+        <button class="state-button mph">
+          mph <img src="./assets/images/icon-checkmark.svg" alt="" />
+        </button>
+      </div>
+      <label for="Precipitation-option">Precipitation</label>
+      <div class="unit-section">
+        <button class="state-button state-button--active millimeters">
+          Millimeters (mm)
+          <img src="./assets/images/icon-checkmark.svg" alt="" />
+        </button>
+        <button class="state-button inches">
+          Inches (in) <img src="./assets/images/icon-checkmark.svg" alt="" />
+        </button>
+      </div>
+    </div>
+    <h1 class="title">How's the sky looking today?</h1>
+    <form class="search-sec">
+      <div class="search-input-wrapper">
+        <img
+          class="search-icon"
+          src="./assets/images/icon-search.svg"
+          alt="search"
+        />
+        <input
+          class="search-input"
+          placeholder="Search for a city, e.g., New York"
+          type="search"
+        />
+      </div>
+      <button class="search-btn" type="submit">Search</button>
+    </form>
+
+    <main>
+      <div class="today-container">
+        <img
+          class="today-bg"
+          src="./assets/images/bg-today-large.svg"
+          alt="today-bg"
+        />
+        <div class="main-skeleton">
+          <img
+            class="skeleton-loading-icon"
+            src="./assets/images/icon-loading.svg"
+            alt="loading"
+          />
+        </div>
+        <div class="today-container__left-side">
+          <p class="today-bg__main-par">Berlin, Germany</p>
+          <p class="today-bg__lower-par">Tuesday, Aug 5, 2025</p>
+        </div>
+        <div class="today-container__right-side">
+          <picture class="weather-img">
+            <img
+              class="weather-icon"
+              src="./assets/images/icon-sunny.webp"
+              alt="sunny"
+            />
+          </picture>
+          <p class="main-temp"></p>
+        </div>
+      </div>
+
+      <!-- Insert temperature here -->
+      <div class="lower-cards-wrapper">
+        <div class="lower-skeleton">
+          <div class="lower-skeleton-card">
+            <p class="skeleton-card-top">Feels like</p>
+            <p class="skeleton-card-bottom">--</p>
+          </div>
+          <div class="lower-skeleton-card">
+            <p class="skeleton-card-top">Humidity</p>
+            <p class="skeleton-card-bottom">--</p>
+          </div>
+          <div class="lower-skeleton-card">
+            <p class="skeleton-card-top">Wind</p>
+            <p class="skeleton-card-bottom">--</p>
+          </div>
+          <div class="lower-skeleton-card">
+            <p class="skeleton-card-top">Precipitation</p>
+            <p class="skeleton-card-bottom">--</p>
+          </div>
+        </div>
+        <div class="lower-cards">
+          <div class="feels-like">
+            <p class="card-top">Feels like</p>
+            <p class="card-bottom feels-like-bottom"></p>
+          </div>
+          <!-- Insert humidity here -->
+          <div class="Humidity">
+            <p class="card-top">Humidity</p>
+            <p class="card-bottom humidity-bottm"></p>
+          </div>
+          <!-- Insert wind here -->
+          <div class="Wind">
+            <p class="card-top">Wind</p>
+            <p class="card-bottom wind-bottom"></p>
+          </div>
+          <!-- Insert precipitation here -->
+          <div class="Precipitation">
+            <p class="card-top">Precipitation</p>
+            <p class="card-bottom Precipitation-bottom"></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Insert daily forecast for the next 7 days here -->
+
+      <div class="daily-forecast--wrapper">
+        <p class="daily-forecast__title-par">Daily forecast</p>
+        <div class="daily-forecast">
+          <div class="day-forecast-skeleton">
+            <p class="day-forecast-skeleton__top-par"></p>
+            <div class="day-forecast__lower">
+              <p class="day-forecast__lower--left-side"></p>
+              <p class="day-forecast__lower--right-side"></p>
+            </div>
+          </div>
+          <div class="day-forecast-skeleton">
+            <p class="day-forecast-skeleton__top-par"></p>
+            <div class="day-forecast__lower">
+              <p class="day-forecast__lower--left-side"></p>
+              <p class="day-forecast__lower--right-side"></p>
+            </div>
+          </div>
+          <div class="day-forecast-skeleton">
+            <p class="day-forecast-skeleton__top-par"></p>
+            <div class="day-forecast__lower">
+              <p class="day-forecast__lower--left-side"></p>
+              <p class="day-forecast__lower--right-side"></p>
+            </div>
+          </div>
+          <div class="day-forecast-skeleton">
+            <p class="day-forecast-skeleton__top-par"></p>
+            <div class="day-forecast__lower">
+              <p class="day-forecast__lower--left-side"></p>
+              <p class="day-forecast__lower--right-side"></p>
+            </div>
+          </div>
+          <div class="day-forecast-skeleton">
+            <p class="day-forecast-skeleton__top-par"></p>
+            <div class="day-forecast__lower">
+              <p class="day-forecast__lower--left-side"></p>
+              <p class="day-forecast__lower--right-side"></p>
+            </div>
+          </div>
+          <div class="day-forecast-skeleton">
+            <p class="day-forecast-skeleton__top-par"></p>
+            <div class="day-forecast__lower">
+              <p class="day-forecast__lower--left-side"></p>
+              <p class="day-forecast__lower--right-side"></p>
+            </div>
+          </div>
+          <div class="day-forecast-skeleton">
+            <p class="day-forecast-skeleton__top-par"></p>
+            <div class="day-forecast__lower">
+              <p class="day-forecast__lower--left-side"></p>
+              <p class="day-forecast__lower--right-side"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Insert hourly forecast for the selected day here -->
+      <div class="hourly-forecast">
+        <div class="hour-top-sec">
+          <p class="hourly-forecast__title-par">Hourly forecast</p>
+        </div>
+        <div class="hourly-cards"></div>
+      </div>
+    </main>
+    <footer class="footer">
+      <p>Made by Arian, Supported by Ato</p>
+    </footer>
+  </body>
+</html>

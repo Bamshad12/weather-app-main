@@ -1,0 +1,23 @@
+{
+  "name": "weather-app-main",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bamshad12/weather-app-main.git"
+  },
+  "keywords": [],
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Bamshad12/weather-app-main/issues"
+  },
+  "homepage": "https://github.com/Bamshad12/weather-app-main#readme",
+  "dependencies": {
+    "vite": "^8.2.2"
+  }
+}
