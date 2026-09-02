@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/weather-app-main/assets/favicon-32x32-DQjEQYWa.png"
+    />
+
+    <title>Frontend Mentor | Weather app</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 0.6875rem;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+    <script type="module" crossorigin src="/weather-app-main/assets/index-C_3LJFv5.js"></script>
+    <link rel="stylesheet" crossorigin href="/weather-app-main/assets/index-DrETI1ug.css">
+  </head>
+  <body>
+    <nav class="nav-bar">
+      <div class="nav-bar__left-side">
+        <img src="/weather-app-main/assets/logo-hk6Dn71M.svg" alt="" />
+      </div>
+      <div class="nav-bar__right-side">
+        <button class="units-btn">
+          <img
+            class="units-icon"
+            src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='16'%20height='16'%20fill='none'%20viewBox='0%200%2016%2016'%3e%3cpath%20fill='%23fff'%20d='M14.125%207.406c.031.407.031.813%200%201.188l1%20.594a.74.74%200%200%201%20.344.843c-.344%201.313-1.063%202.5-2%203.469-.25.219-.625.281-.906.125l-1-.594c-.25.188-.72.469-1.032.594v1.156a.733.733%200%200%201-.562.719A7.765%207.765%200%200%201%206%2015.5c-.313-.063-.563-.406-.563-.719v-1.156a5.54%205.54%200%200%201-1.03-.594l-1%20.594c-.282.156-.657.094-.907-.125-.938-.969-1.656-2.156-2-3.469a.74.74%200%200%201%20.344-.844l1-.593c-.032-.156-.032-.406-.032-.594%200-.156%200-.406.032-.594l-1-.562A.74.74%200%200%201%20.5%206c.344-1.313%201.063-2.5%202-3.469.25-.219.625-.281.906-.125l1%20.594c.25-.188.719-.469%201.032-.594V1.25c0-.344.218-.625.562-.719a7.766%207.766%200%200%201%203.969%200c.312.063.562.406.562.719v1.156c.313.125.781.406%201.031.594l1-.594c.282-.156.657-.094.907.125.937.969%201.656%202.156%202%203.469a.74.74%200%200%201-.344.844l-1%20.562Zm-1.656%202c.25-1.312.25-1.469%200-2.781l1.375-.781c-.188-.563-.688-1.375-1.063-1.813l-1.375.782c-.969-.844-1.125-.938-2.375-1.375V1.843C8.75%201.812%208.281%201.75%208%201.75c-.313%200-.781.063-1.063.094v1.593c-1.25.438-1.375.532-2.375%201.376L3.188%204.03c-.468.532-.812%201.157-1.062%201.813l1.375.781c-.25%201.313-.25%201.469%200%202.781l-1.375.781c.188.563.688%201.376%201.063%201.813l1.374-.781c.97.844%201.125.937%202.375%201.375v1.594c.282.03.75.093%201.063.093.281%200%20.75-.062%201.031-.094v-1.593c1.25-.438%201.375-.531%202.375-1.375l1.375.781c.375-.438.875-1.25%201.063-1.813l-1.375-.78ZM8%205c1.625%200%203%201.375%203%203%200%201.656-1.375%203-3%203a3%203%200%200%201-3-3c0-1.625%201.344-3%203-3Zm0%204.5A1.5%201.5%200%200%200%209.5%208c0-.813-.688-1.5-1.5-1.5A1.5%201.5%200%200%200%206.5%208c0%20.844.656%201.5%201.5%201.5Z'/%3e%3c/svg%3e"
+            alt="units-icon"
+          />
+          <p>Units</p>
+          <img
+            class="dropdown-icon"
+            src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='13'%20height='8'%20fill='none'%20viewBox='0%200%2013%208'%3e%3cpath%20fill='%23fff'%20d='M6.309%207.484%201.105%202.316c-.175-.14-.175-.421%200-.597l.704-.668a.405.405%200%200%201%20.597%200l4.219%204.148%204.184-4.148c.175-.176.457-.176.597%200l.703.668c.176.176.176.457%200%20.597L6.906%207.484a.405.405%200%200%201-.597%200Z'/%3e%3c/svg%3e"
+            alt="dropdown"
+          />
+        </button>
+      </div>
+    </nav>
+    <div class="units-state">
+      <button class="switch-button">Switch to Imperial</button>
+      <label for="temp-option">Temperature</label>
+      <div class="unit-section">
+        <button class="state-button state-button--active celsius">
+          Celsius (°C) <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='14'%20height='11'%20fill='none'%20viewBox='0%200%2014%2011'%3e%3cpath%20fill='%23fff'%20d='M11.895%201.047c.136-.137.355-.137.464%200l.793.766c.11.136.11.355%200%20.464L4.95%2010.48a.315.315%200%200%201-.465%200L.82%206.844c-.11-.137-.11-.356%200-.465l.793-.793c.11-.11.328-.11.465%200l2.625%202.652%207.192-7.191Z'/%3e%3c/svg%3e" alt="" />
+        </button>
+        <button class="state-button fahrenheit">
+          Fahrenheit (°F)
+          <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='14'%20height='11'%20fill='none'%20viewBox='0%200%2014%2011'%3e%3cpath%20fill='%23fff'%20d='M11.895%201.047c.136-.137.355-.137.464%200l.793.766c.11.136.11.355%200%20.464L4.95%2010.48a.315.315%200%200%201-.465%200L.82%206.844c-.11-.137-.11-.356%200-.465l.793-.793c.11-.11.328-.11.465%200l2.625%202.652%207.192-7.191Z'/%3e%3c/svg%3e" alt="" />
+        </button>
+      </div>
+      <label for="wind-speed-option">Wind Speed</label>
+      <div class="unit-section">
+        <button class="state-button state-button--active kmh">
+          km/h <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='14'%20height='11'%20fill='none'%20viewBox='0%200%2014%2011'%3e%3cpath%20fill='%23fff'%20d='M11.895%201.047c.136-.137.355-.137.464%200l.793.766c.11.136.11.355%200%20.464L4.95%2010.48a.315.315%200%200%201-.465%200L.82%206.844c-.11-.137-.11-.356%200-.465l.793-.793c.11-.11.328-.11.465%200l2.625%202.652%207.192-7.191Z'/%3e%3c/svg%3e" alt="" />
+        </button>
+        <button class="state-button mph">
+          mph <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='14'%20height='11'%20fill='none'%20viewBox='0%200%2014%2011'%3e%3cpath%20fill='%23fff'%20d='M11.895%201.047c.136-.137.355-.137.464%200l.793.766c.11.136.11.355%200%20.464L4.95%2010.48a.315.315%200%200%201-.465%200L.82%206.844c-.11-.137-.11-.356%200-.465l.793-.793c.11-.11.328-.11.465%200l2.625%202.652%207.192-7.191Z'/%3e%3c/svg%3e" alt="" />
+        </button>
+      </div>
+      <label for="Precipitation-option">Precipitation</label>
+      <div class="unit-section">
+        <button class="state-button state-button--active millimeters">
+          Millimeters (mm)
+          <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='14'%20height='11'%20fill='none'%20viewBox='0%200%2014%2011'%3e%3cpath%20fill='%23fff'%20d='M11.895%201.047c.136-.137.355-.137.464%200l.793.766c.11.136.11.355%200%20.464L4.95%2010.48a.315.315%200%200%201-.465%200L.82%206.844c-.11-.137-.11-.356%200-.465l.793-.793c.11-.11.328-.11.465%200l2.625%202.652%207.192-7.191Z'/%3e%3c/svg%3e" alt="" />
+        </button>
+        <button class="state-button inches">
+          Inches (in) <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='14'%20height='11'%20fill='none'%20viewBox='0%200%2014%2011'%3e%3cpath%20fill='%23fff'%20d='M11.895%201.047c.136-.137.355-.137.464%200l.793.766c.11.136.11.355%200%20.464L4.95%2010.48a.315.315%200%200%201-.465%200L.82%206.844c-.11-.137-.11-.356%200-.465l.793-.793c.11-.11.328-.11.465%200l2.625%202.652%207.192-7.191Z'/%3e%3c/svg%3e" alt="" />
+        </button>
+      </div>
+    </div>
+    <h1 class="title">How's the sky looking today?</h1>
+    <form class="search-sec">
+      <div class="search-input-wrapper">
+        <img
+          class="search-icon"
+          src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='21'%20height='21'%20fill='none'%20viewBox='0%200%2021%2021'%3e%3cpath%20fill='%23D4D3D9'%20d='M19.844%2018.82c.195.196.195.508%200%20.664l-.899.899c-.156.195-.468.195-.664%200l-4.726-4.727a.63.63%200%200%201-.117-.351v-.508c-1.446%201.21-3.282%201.953-5.313%201.953A8.119%208.119%200%200%201%200%208.625C0%204.172%203.633.5%208.125.5c4.453%200%208.125%203.672%208.125%208.125%200%202.031-.781%203.906-1.992%205.313h.508c.117%200%20.234.078.351.156l4.727%204.726ZM8.125%2014.875a6.243%206.243%200%200%200%206.25-6.25c0-3.438-2.813-6.25-6.25-6.25a6.243%206.243%200%200%200-6.25%206.25%206.219%206.219%200%200%200%206.25%206.25Z'/%3e%3c/svg%3e"
+          alt="search"
+        />
+        <input
+          class="search-input"
+          placeholder="Search for a city, e.g., New York"
+          type="search"
+        />
+      </div>
+      <button class="search-btn" type="submit">Search</button>
+    </form>
+
+    <main>
+      <div class="today-container">
+        <img
+          class="today-bg"
+          src="/weather-app-main/assets/bg-today-large-CqYszFxp.svg"
+          alt="today-bg"
+        />
+        <div class="main-skeleton">
+          <img
+            class="skeleton-loading-icon"
+            src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='16'%20height='16'%20fill='none'%20viewBox='0%200%2016%2016'%3e%3cpath%20fill='%23fff'%20d='M9.25%201.5c0%20.719-.563%201.25-1.25%201.25-.719%200-1.25-.531-1.25-1.25C6.75.812%207.281.25%208%20.25c.688%200%201.25.563%201.25%201.25ZM8%2013.25c.688%200%201.25.563%201.25%201.25%200%20.719-.563%201.25-1.25%201.25-.719%200-1.25-.531-1.25-1.25%200-.688.531-1.25%201.25-1.25ZM15.75%208c0%20.719-.563%201.25-1.25%201.25-.719%200-1.25-.531-1.25-1.25%200-.688.531-1.25%201.25-1.25.688%200%201.25.563%201.25%201.25Zm-13%200c0%20.719-.563%201.25-1.25%201.25C.781%209.25.25%208.719.25%208c0-.688.531-1.25%201.25-1.25.688%200%201.25.563%201.25%201.25Zm.625-5.844c.719%200%201.25.563%201.25%201.25%200%20.719-.531%201.25-1.25%201.25-.688%200-1.25-.531-1.25-1.25%200-.687.563-1.25%201.25-1.25Zm9.219%209.219c.687%200%201.25.531%201.25%201.25%200%20.688-.563%201.25-1.25%201.25-.719%200-1.25-.563-1.25-1.25%200-.719.531-1.25%201.25-1.25Zm-9.219%200c.719%200%201.25.531%201.25%201.25%200%20.688-.531%201.25-1.25%201.25-.688%200-1.25-.563-1.25-1.25%200-.719.563-1.25%201.25-1.25Z'/%3e%3c/svg%3e"
+            alt="loading"
+          />
+        </div>
+        <div class="today-container__left-side">
+          <p class="today-bg__main-par">Berlin, Germany</p>
+          <p class="today-bg__lower-par">Tuesday, Aug 5, 2025</p>
+        </div>
+        <div class="today-container__right-side">
+          <picture class="weather-img">
+            <img
+              class="weather-icon"
+              src="data:image/webp;base64,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"
+              alt="sunny"
+            />
+          </picture>
+          <p class="main-temp"></p>
+        </div>
+      </div>
+
+      <!-- Insert temperature here -->
+      <div class="lower-cards-wrapper">
+        <div class="lower-skeleton">
+          <div class="lower-skeleton-card">
+            <p class="skeleton-card-top">Feels like</p>
+            <p class="skeleton-card-bottom">--</p>
+          </div>
+          <div class="lower-skeleton-card">
+            <p class="skeleton-card-top">Humidity</p>
+            <p class="skeleton-card-bottom">--</p>
+          </div>
+          <div class="lower-skeleton-card">
+            <p class="skeleton-card-top">Wind</p>
+            <p class="skeleton-card-bottom">--</p>
+          </div>
+          <div class="lower-skeleton-card">
+            <p class="skeleton-card-top">Precipitation</p>
+            <p class="skeleton-card-bottom">--</p>
+          </div>
+        </div>
+        <div class="lower-cards">
+          <div class="feels-like">
+            <p class="card-top">Feels like</p>
+            <p class="card-bottom feels-like-bottom"></p>
+          </div>
+          <!-- Insert humidity here -->
+          <div class="Humidity">
+            <p class="card-top">Humidity</p>
+            <p class="card-bottom humidity-bottm"></p>
+          </div>
+          <!-- Insert wind here -->
+          <div class="Wind">
+            <p class="card-top">Wind</p>
+            <p class="card-bottom wind-bottom"></p>
+          </div>
+          <!-- Insert precipitation here -->
+          <div class="Precipitation">
+            <p class="card-top">Precipitation</p>
+            <p class="card-bottom Precipitation-bottom"></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Insert daily forecast for the next 7 days here -->
+
+      <div class="daily-forecast--wrapper">
+        <p class="daily-forecast__title-par">Daily forecast</p>
+        <div class="daily-forecast">
+          <div class="day-forecast-skeleton">
+            <p class="day-forecast-skeleton__top-par"></p>
+            <div class="day-forecast__lower">
+              <p class="day-forecast__lower--left-side"></p>
+              <p class="day-forecast__lower--right-side"></p>
+            </div>
+          </div>
+          <div class="day-forecast-skeleton">
+            <p class="day-forecast-skeleton__top-par"></p>
+            <div class="day-forecast__lower">
+              <p class="day-forecast__lower--left-side"></p>
+              <p class="day-forecast__lower--right-side"></p>
+            </div>
+          </div>
+          <div class="day-forecast-skeleton">
+            <p class="day-forecast-skeleton__top-par"></p>
+            <div class="day-forecast__lower">
+              <p class="day-forecast__lower--left-side"></p>
+              <p class="day-forecast__lower--right-side"></p>
+            </div>
+          </div>
+          <div class="day-forecast-skeleton">
+            <p class="day-forecast-skeleton__top-par"></p>
+            <div class="day-forecast__lower">
+              <p class="day-forecast__lower--left-side"></p>
+              <p class="day-forecast__lower--right-side"></p>
+            </div>
+          </div>
+          <div class="day-forecast-skeleton">
+            <p class="day-forecast-skeleton__top-par"></p>
+            <div class="day-forecast__lower">
+              <p class="day-forecast__lower--left-side"></p>
+              <p class="day-forecast__lower--right-side"></p>
+            </div>
+          </div>
+          <div class="day-forecast-skeleton">
+            <p class="day-forecast-skeleton__top-par"></p>
+            <div class="day-forecast__lower">
+              <p class="day-forecast__lower--left-side"></p>
+              <p class="day-forecast__lower--right-side"></p>
+            </div>
+          </div>
+          <div class="day-forecast-skeleton">
+            <p class="day-forecast-skeleton__top-par"></p>
+            <div class="day-forecast__lower">
+              <p class="day-forecast__lower--left-side"></p>
+              <p class="day-forecast__lower--right-side"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Insert hourly forecast for the selected day here -->
+      <div class="hourly-forecast">
+        <div class="hour-top-sec">
+          <p class="hourly-forecast__title-par">Hourly forecast</p>
+        </div>
+        <div class="hourly-cards"></div>
+      </div>
+    </main>
+    <footer class="footer">
+      <p>Made by Arian, Supported by Ato</p>
+    </footer>
+  </body>
+</html>
